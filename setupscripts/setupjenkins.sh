@@ -15,8 +15,8 @@ echo "Install jenkins"
 sudo apt install -y jenkins
 echo "INSTALLED  JENKINS................." 
 
-sudo wget -O /var/lib/jenkins/secrets/initialAdminPassword https://raw.githubusercontent.com/gowriand/jenkins/master/setupscripts/initialAdminPassword
-echo "USE PASS to SETUP: "`cat /var/lib/jenkins/secrets/initialAdminPassword`
+#sudo wget -O /var/lib/jenkins/secrets/initialAdminPassword https://raw.githubusercontent.com/gowriand/jenkins/master/setupscripts/initialAdminPassword
+##echo "USE PASS to SETUP: "`cat /var/lib/jenkins/secrets/initialAdminPassword`
  
  
 
