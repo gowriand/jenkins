@@ -1,7 +1,6 @@
 #!/bin/bash
-sudo mkdir /jenkins
-sudo cd /jenkins
-sudo wget https://raw.githubusercontent.com/gowriand/jenkins/master/setupscripts/setupjenkins.sh
+cd /
+sudo git clone https://github.com/gowriand/jenkins.git
+cd /jenkins/setupscripts/
 sudo sh -x setupjenkins.sh
-echo "USE PASS to SETUP: "`cat /var/lib/jenkins/secrets/initialAdminPassword`
 
