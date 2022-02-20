@@ -13,7 +13,10 @@ java -version
 
 echo "Install jenkins"
 sudo apt install -y jenkins
+sleep 5
+ps aux |grep jenkins
 echo "INSTALLED  JENKINS................." 
+echo "USE PASS to SETUP: "`cat /var/lib/jenkins/secrets/initialAdminPassword`
 
 #sudo wget -O /var/lib/jenkins/secrets/initialAdminPassword https://raw.githubusercontent.com/gowriand/jenkins/master/setupscripts/initialAdminPassword
 ##echo "USE PASS to SETUP: "`cat /var/lib/jenkins/secrets/initialAdminPassword`
