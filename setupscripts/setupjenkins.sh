@@ -12,6 +12,6 @@ echo "Installed java................."
 java -version
 
 echo "Install jenkins"
-sudo apt install jenkins
+sudo apt install -y jenkins
 
 
