@@ -1,0 +1,368 @@
+IP - 13.233.153.9
+
+http://13.233.153.9:8080/
+rajesh
+rajesh123
+=====================================
+Where can you find a course masterials?
+===============================================
+tutorial  - https://www.devopsschool.com/tutorial/jenkins/
+slides  - https://www.devopsschool.com/slides/
+Video - https://www.devopsschool.com/video/
+Video - https://www.devopsschool.com/video/
+PDF - https://www.devopsschool.com/pdf/
+Sample Programs 
+	- https://github.com/orgs/devopsschool-demo-labs-projects/dashboard
+	- https://github.com/orgs/devopsschool-sample-programs/dashboard
+-----------------DevOps@rajeshkumar.xyz--------------------------------------
+
+Jenkin
+	Way to Automate Manual Steps
+	Scheduling
+	IMM FEEDBACK
+	Integ tools
+
+Integ tools
+-----------------------SDLC-----------------------------------------
+Plan -> Code -> Code Review -> Build -> UT -> Pack -> Archving -> Dep2QA -> Accept Test -> Code Coverage
+-------------------------------------------------------------------------------------------------------------
+Jira -> Git   -> SonarQube  -> Maven -> Junit -> Jar -> Artifactory -> Ansible -> Selenium -> Jacoco
+=======================================JENKINS============================================================
+
+Imm feedback
+	Dashboard AKA Pipeline
+
+Jenkins Authentication
+Jenkins Authorization
+Jenkins Node Management and HA
+Jenkins Backup and Restore
+
+=====================================================================
+Setting up 3 Tools using Docker
+- Jira
+- SonarQube
+- Artifactory
+
+13.233.93.36
+https://www.devopsschool.com/tutorial/docker/install-config/docker-install-commuityedition-centos-rhel.html
+
+Jira
+----------
+docker volume create --name jiraVolume
+docker run -v jiraVolume:/var/atlassian/application-data/jira --name="jira" -d -p 8080:8080 atlassian/jira-software
+http://13.233.93.36:8080/
+devops
+devops123
+
+SonarQube
+----------
+docker run -d -p 9000:9000 sonarqube
+http://13.233.93.36:9000
+admin
+admin
+
+Artifactory
+----------
+https://www.devopsschool.com/blog/setup-artifactory-pro-6-1-0-using-docker-containtainer/
+543a181849465b127327a92231f63b321980f1fb
+
+docker login -u scmgalaxy -p 543a181849465b127327a92231f63b321980f1fb jfrog-docker-reg2.bintray.io
+docker run -d -p 8081:8081 jfrog-docker-reg2.bintray.io/jfrog/artifactory-oss:6.1.0
+http://13.233.93.36:8081
+admin
+password
+http://13.233.93.36:8081/artifactory/dhlall
+
+
+
+How to Integrate any tools in Jenkins?
+=======================================
+1. Install Plugins
+2. Config Plugins
+3. Use a plugins in Jobs.
+
+Case 1 - Whenver we have failed jobs - new ticket should be created and assigned.
+============================================================================
+What is Plugins are not working 
+=======================================
+ - Find a command to create a jira ticket
+ - Put this command in Jobs and Only if Job failed.
+ - 
+
+curl -D- -u username:password -X POST --data '{"fields":{"project":{"key": "PROJECTKEY"},"summary": "REST ye merry gentlemen.","description": "Creating of an issue using project keys and issue type names using the REST API","issuetype": {"name": "Bug"}}}' -H "Content-Type: application/json" https://mycompanyname.atlassian.net/rest/api/2/issue/
+
+==================================================================
+SonarQube
+	Code Review tool.
+	
+	- SonarQube	
+	- Source Code
+	https://github.com/devopsschool-demo-labs-projects/java-sonar-runner-simple
+	- Scanner
+
+If you want to learn SonarQube - https://www.devopsschool.com/videos/show/sonarqube?type=video
+
+==================================================================
+Artifactory
+	Step 1 - Install Plugins
+	Step 2 - Config Plugins
+	Step 3 - Locate Repo, GroupID, ArtID, Version..etc
+		http://13.233.93.36:8081/artifactory/dhlall
+		com.scmgalaxy.mavensample
+		yoodle
+		jar
+		215
+	
+	Step 3 - Use a plugins in Jobs with mvn deploy
+		
+
+	https://github.com/devopsschool-demo-labs-projects/helloworld-java-maven
+
+	yoodle-215.jar
+===============================
+[main] ERROR org.apache.maven.cli.MavenCli - Failed to execute goal org.apache.maven.plugins:maven-deploy-plugin:2.7:deploy (default-deploy) on project yoodle: Failed to deploy artifacts: Could not transfer artifact com.scmgalaxy.mavensample:yoodle:jar:215 from/to ravi (http://13.233.138.64:8081/repository/rajesh-maven-hosted/): Transfer failed for http://13.233.138.64:8081/repository/rajesh-maven-hosted/com/scmgalaxy/mavensample/yoodle/215/yoodle-215.jar: Connect to 13.233.138.64:8081 [/13.233.138.64] failed: Connection refused (Connection refused) -> [Help 1]
+[main] ERROR org.apache.maven.cli.MavenCli - 
+
+http://13.233.138.64:8081/repository/rajesh-maven-hosted/
+
+===============================
+1. Modify pom.xml with repo
+2.  Modify setting.xml with access
+
+=========================================
+https://www.devopsschool.com/blog/how-to-upload-the-artifacts-in-sonatype-nexus/
+===================================================================================
+Jenkins Code
+https://github.com/jenkinsci/jenkins
+https://www.jenkins.io/doc/developer/plugin-development/
+Core Java
+Grovvy
+-------
+- HPI
+
+
+-----------------------SDLC-----------------------------------------
+Plan -> Code -> Code Review -> Build -> UT -> Pack -> Archving -> Dep2QA -> Accept Test -> Code Coverage
+-------------------------------------------------------------------------------------------------------------
+Jira -> Git   -> SonarQube  -> Maven -> Junit -> Jar -> Artifactory -> Ansible -> Selenium -> Jacoco
+=======================================JENKINS============================================================
+
+Scan -> Compile -> Test -> Package -> Deploy -> CodeCoverage
+
+
+target/surefire-reports/*.xml	
+
+
+
+CodeCoervage
+https://github.com/scmgalaxy/jacoco-maven-unittestv2
+
+Imm feedback
+	Dashboard AKA Pipeline
+============================================================================================================
+	- Build Pipeline - NO SCRIPTING  BUT Oldest way
+	- Pipeline - Scripting - New 
+========================================================
+Scan -> Compile -> Test -> Package -> Deploy -> CodeCoverage
+=======================================================================
+
+- Pipeline - Scripting - New 
+===========================================
+======================jenkinsfile in groovy================================
+---------------------PIPELINE------------------------------
+PHASE 1 --> PHASE 2 --> PHASE 3 --> PHASE 4 --> PHASE 5-->
+Step1		Step1	Step1
+Step2		Step2	Step2
+Stpe3		Stpe3
+
+
+
+pipeline {
+   agent any
+
+   tools {
+      // Install the Maven version configured as "M3" and add it to the path.
+      maven "M3"
+   }
+
+   stages {
+      stage('Build') {
+         steps {
+            // Get some code from a GitHub repository
+            git 'https://github.com/jglick/simple-maven-project-with-tests.git'
+
+            // Run Maven on a Unix agent.
+            sh "mvn -Dmaven.test.failure.ignore=true clean package"
+
+            // To run Maven on a Windows agent, use
+            // bat "mvn -Dmaven.test.failure.ignore=true clean package"
+         }
+
+         post {
+            // If Maven was able to run the tests, even if some of the test
+            // failed, record the test results and archive the jar file.
+            success {
+               junit '**/target/surefire-reports/TEST-*.xml'
+               archiveArtifacts 'target/*.jar'
+            }
+         }
+      }
+   }
+}
+
+
+How can i learn more about pipeline scripting?
+https://www.jenkins.io/doc/book/pipeline/
+https://github.com/devopsschool-sample-programs/jenkins-groovy-scripts-collection
+https://github.com/devopsschool-sample-programs/jenkins-jenkinsfile-example-collection
+
+
+pipeline {
+   agent any
+
+   tools {
+      // Install the Maven version configured as "M3" and add it to the path.
+      maven "maven-rajesh-latest"
+   }
+
+   stages {
+      stage('Build') {
+         steps {
+            // Get some code from a GitHub repository
+            git 'https://github.com/scmgalaxy/jacoco-maven-unittestv2'
+
+            // Run Maven on a Unix agent.
+            sh "mvn -Dmaven.test.failure.ignore=true clean compile"
+
+            // To run Maven on a Windows agent, use
+            // bat "mvn -Dmaven.test.failure.ignore=true clean package"
+         }
+      }
+	stage('Test') {
+         steps {
+            // Get some code from a GitHub repository
+            git 'https://github.com/jglick/simple-maven-project-with-tests.git'
+
+            // Run Maven on a Unix agent.
+            sh "mvn -Dmaven.test.failure.ignore=true clean test"
+
+            // To run Maven on a Windows agent, use
+            // bat "mvn -Dmaven.test.failure.ignore=true clean package"
+         }
+
+         post {
+            // If Maven was able to run the tests, even if some of the test
+            // failed, record the test results and archive the jar file.
+            success {
+               junit '**/target/surefire-reports/TEST-*.xml'
+               archiveArtifacts 'target/*.jar'
+            }
+         }
+      }
+	stage('Deploy') {
+         steps {
+            // Get some code from a GitHub repository
+            git 'https://github.com/jglick/simple-maven-project-with-tests.git'
+
+            // Run Maven on a Unix agent.
+            sh "mvn -Dmaven.test.failure.ignore=true clean deploy"
+
+            // To run Maven on a Windows agent, use
+            // bat "mvn -Dmaven.test.failure.ignore=true clean package"
+         }
+
+         post {
+            // If Maven was able to run the tests, even if some of the test
+            // failed, record the test results and archive the jar file.
+            success {
+               archiveArtifacts 'target/*.jar'
+            }
+         }
+      }
+   }
+}
+=========================
+Jenkins - community
+jenkins - cloudbess
+jenkins - blueocean
+jenkins - jenkins x
+
+
+
+Jenkins Authentication
+===============================================
+	- LDAP
+	- USER ID and Pass
+	- OpenID
+
+Jenkins Authorization
+
+
+
+
+
+Jenkins Node Management and HA
+===============================================
+	Scalability
+	High Availability
+============================================
+Cond 1 - 
+YOU DO NOT HAVE MORE VMs.
+
+1 JOB - 1 HOurs - 24 hours = 1 NODE
+2 JOB - 1 HOUR - 24 HOUR - ?????
+
+
+
+
+
+
+
+
+/var/lib/jenkins/workspace/job10/package.jar
+/var/lib/jenkins/workspace/job10@2/package.jar
+
+http://13.233.153.9:8080/job/job10/lastBuild/
+===============================================================================
+===============================================================================
+Execute concurrent builds if necessary
+===============================================================================
+===============================================================================
+# of executors
+===============================================================================
+===============================================================================
+How to add Build Node?
+====================================
+	Add Manual vms.
+	add In cloud
+	Add in Container
+
+ADD a NODE
+	LINUX
+	13.127.217.43
+		JDK
+		IP
+		USER
+		PASSWORD
+		WORKDIR DIR	
+
+	WINDOWS
+
+
+
+Jenkins Backup and Restore
+--------------------------------------
+Disk Space Maintance
+--------------------------------------
+
+Job1 -----
+
+		ANY AVAILABALE NODE....
+
+
+
+
+
+
+
+

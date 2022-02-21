@@ -1,0 +1,351 @@
+
+Rajesh Kumar
+=============Agenda==================
+CI - Jenkins
+===========================
+
+Docker - 
+=====================
+
+
+Kubernetes + ECS + ECR + EKS -
+
+- AWS Cloud Formation
+
+AWS Monitoring and Observability
+	- AWS CloudWatch
+	- AWS CloudTrail +
+
+- HA - FaultTolerance - Disaster Recovery with AWS
+  	
+AWS DevOps training
+- CodeStar Introductions and Demo and Lab
+- CodeCommit Introductions and Demo and Lab
+- CodeArtifact Introductions and Demo and Lab
+- CodeBuild Introductions and Demo and Lab
+- CodeDeploy Introductions and Demo and Lab
+- CodePipeline Introductions and Demo and Lab
+- Cloud9 Introductions and Demo and Lab
+- CloudShell Introductions and Demo and Lab
+- X-Ray Introductions and Demo and Lab
+===================================================
+Start Time - 10 AM 
+END time - 5 PM
+---------------------
+Lunch - 30 mins
+	1 PM.
+========================
+2 BREAK - 
+	11.30 - 5-10 mins
+	3.30  - 5-10 mins
+
+==================================
+I WANT TO LEARN DEVOPS?
+
+=================================================================================================================
+=================================================================================================================
+
+What is Jenkins?
+=========================
+	CI TOOL
+	Release
+		jenkins				- OS - FREE
+		jenkins enterprise from Cloudbees - PAID 
+		Blue oCean - PIPELINE
+		Jenkins X - Containers
+
+	Dev in JAVA
+	Powered by 1000 Plugins	
+		Plugin means - Feature
+
+What is CI?
+	- Cont* Integ
+
+Auto Build + Auto Test
+======================
+	IMM FEDBACK
+
+ARCH	DEV	DEV	BR	DEV	OPS		OPs	OPS	 QA Re		
+						AUTO					
+	        ===========================================================================
+PLAN -> Code -> Review -> Build -> UnitT -> Package -> Archive -> Dep2QA -> AT -> Coverage 
+============================================================================================														
+JIRA -> Git -> SonarQube -> MAven -> Junit -> war --> nexus -> Puppet -> sel --> jacoco
+================================================================================================
+					Jenkins
+										ALL PASSES ---> RELEASE
+										ONE FAILD ---> REPEAT
+
+						=======================================================
+						- IMM FEDBACK	
+							EMAIL - CHAT - SMS - DASHBOARD
+						- SCHEDULing
+						- Integ - With ALL TOOLS
+
+
+=================================
+Other tools - 
+		teamcity - bamboo - circleci - gitlab
+
+https://devopsschool.com/path/
+==============================================================
+Jenkins Arch - How jenkins works???
+==========================================
+https://www.devopsschool.com/blog/jenkins-architecture-explained/
+Server
+	UI + Master Slave
+	==================
+		Jenkins
+==================================
+How to install jenkins?
+https://devopsschool.com/tutorial/jenkins/jenkins-installation-and-configuration.html
+13.235.86.253
+
+
+=====================================================================================
+Create a 
+	JOB AKA PROJECT
+
+SECRET FORMULA
+=================================
+
+Secret formula to work with Jenkins?
+=========================================
+What is your Technology?
+				version
+		Java
+		dotnet
+		node
+		python
+		ruby
+
+Where is the code?	
+				repo loc	access
+		git	
+		svn
+		p4
+		tfs
+	
+What is your builders?
+		Anything
+		maven	pom.xml		goal	compile -> test -> package 
+		ant	build.xml	target		
+		gradle	gradle.build	Tasks
+		msbuild	default.msbuild target	
+
+	
+How frequenly you want this job to be triggered?
+		hourly
+
+How you want a feedback of this job?
+		email - rajesh@devopsschool.com
+------------------------------------- 
+What is your Technology?
+		Java
+Where is the code?
+		https://github.com/devopsschool-demo-labs-projects/helloworld-java-maven
+How frequenly you want this job to be triggered?
+		hourly
+What is your builders?
+		maven
+
+How you want a feedback of this job?
+		email to rajesh@scmgalaxy.com
+
+======================================================================================
+
+
+
+
+
+	Godaddy
+Step 1- Buy a DOMAIN
+		nameservers (Address of DNS Server)
+					AWS
+					DNS Server | HosteD Zone
+						DNS Record
+						- A Record	- A IP ADDRESS OF LB or
+						- MX Record	- Mail SERVER
+						- Cname
+						- @
+						- ftp
+						- mail
+
+rajesh@devopsschool.com
+=============================
+===============================> devopsschool.com
+					= MX Record				
+
+=====================================================================
+Docker
+=====================================================================
+What is Docker?
+---------------------
+	container mgmt tool
+
+What is Container?
+----------------------------
+"TheDevOpsSchool youtube docker" in Google.
+
+How to install Docker?
+https://devopsschool.com/tutorial/docker/install-config/docker-install-commuityedition-centos-rhel.html
+
+Its a light weight & Indendent APP RUN TIME ENV
+
+Docker Component
+===============================
+Docker Engine
+	- Tool which we just installed.
+
+Docker image
+	- Collection of FILE SYSTEM
+	- APPS
+	- + ROOT FS + USER FS + APP FS
+VM images
+	- OS
+	BOOT FS + ROOT FS + USER FS + APP
+
+Docker Registry 
+		Contains
+			Repository
+				Contains
+					Version of FILE SYSTEM
+			AKA DOCKER IMAGE
+
+		PUBLIC
+			hub.docker.com
+
+		PVT
+			ECR 
+			NEXUS
+		
+Docker Container
+			A MOMENT WE RUN IMAGE with a help of docker
+			- ONE USER IS CREATED
+			- ONE NET IS CREATED
+			- ONE PID iS Craeted
+			- ONE MOUNT(FILESYSTEM) GET CFREATED FROM DOCKER IMAGE
+			
+			USER IS ATTACHED TO
+					NET
+					PID
+					MOUNT(FILESYSTEM)
+			===============================
+				Container
+
+
+			docker run -d -p 80:80 httpd 
+			docker run -d -p 8082:8080 jenkins/jenkins
+			docker run -d -p 8083:8080 jenkins/jenkins
+			docker run -d -p 8084:8080 jenkins/jenkins
+===================================================================
+ 31  docker pull httpd
+   32  clear
+   33  docker images
+   34  clear
+   35  docker run -d -p 80:80 httpd
+   36  docker ps
+   37  docker run -d -p 81:80 httpd
+   38  docker run -d -p 82:80 httpd
+   39  docker run -d -p 83:80 httpd
+   40  docker ps
+   41  clear
+   42  docker pull jenkins/jenkins
+   43  clear
+   44  docker run -d -p 8082:8080 jenkins/jenkins
+   45  docker run -d -p 8083:8080 jenkins/jenkins
+   46  docker run -d -p 8084:8080 jenkins/jenkins
+   47  docker ps
+   48  docker stop 19fbd1b9e78f 17ea227c3059 311703d794af 382e3b281474 0b2deac98f01 a83f42102193 3551cdd23935
+   49  docker rm 19fbd1b9e78f 17ea227c3059 311703d794af 382e3b281474 0b2deac98f01 a83f42102193 3551cdd23935
+   50  docker ps
+
+=================================================================
+Container Workflow
+======================================================================
+Create -> Start -> Stop -> Start -> Restart -> Pause -> Unpause -> Kill -> Delete
+
+Image - httpd
+
+  59  docker ps
+   60  docker ps -a
+   61  docker create --name raj1 httpd
+   62  docker ps -a
+   63  docker start df8eb661dccf
+   64  docker ps -a
+   65  docker stop df8eb661dccf
+   66  docker ps -a
+   67  docker ps -a
+   68  clear
+   69  docker start df8eb661dccf
+   70  docker ps -a
+   71  docker ps -a
+   72  docker restart df8eb661dccf
+   73  docker ps -a
+   74  docker pause df8eb661dccf
+   75  docker ps -a
+   76  docker unpause df8eb661dccf
+   77  docker ps -a
+   78  docker kill df8eb661dccf
+   79  docker ps -a
+   80  docker rm df8eb661dccf
+   81  docker ps -a
+   82  history
+
+
+ 83  clear
+   84  docker help
+   85  clear
+   86  docker help pause
+   87  docker stats
+   88  history
+
+
+
+65.2.74.248
+centos
+centos123
+
+============================================
+docker run
+==========================
+pull -> Create -> Start -> ATTACHED TO THE CONTAINER
+
+docker run -d
+====================================================
+pull -> Create -> Start -> DO NOT ATTACHED TO THE CONTAINER
+
+==================================================================
+
+How to use that container?
+=====================================
+How to get inside a conainer?
+------------------------
+exec way - 
+		using exec command u can RUN any exeutables inside a cont.
+
+  136  git
+  137  docker exec 7c565041d4a8 ps
+  138  docker exec 7c565041d4a8 ls
+  139  clear
+docker exec -it 7c565041d4a8 /bin/bash
+
+
+How to access conainer from outside?
+
+ 37  docker run -d -p 81:80 httpd
+===================================================
+
+
+Note
+https://www.devopsschool.com/blog/configure-jenkins-first-job-of-java-code-base-with-maven-build-tool/
+
+
+
+
+
+
+
+
+
+
