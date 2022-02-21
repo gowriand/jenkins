@@ -2,5 +2,5 @@
 cd /
 sudo git clone https://github.com/gowriand/jenkins.git
 cd /jenkins/setupscripts/
-sudo sh -x setupjenkins.sh
+sudo sh -x setup-jenkins.sh
 
