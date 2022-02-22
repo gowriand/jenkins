@@ -1,8 +1,9 @@
 #!/bin/bash
-
-# give app separated by space
-# sample 
-# applist=(jenkins puppet docker)
+###########################
+# Sample- Give app separated by space 
+## Add puppet last only as it is followed by a reboot
+# applist=(jenkins docker puppet)
+####################################
 
 applist=(jenkins)
 
