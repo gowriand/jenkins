@@ -1,6 +1,9 @@
 #!/bin/bash
 
 # give app separated by space
+# sample 
+# applist=(jenkins puppet docker)
+
 applist=(jenkins)
 
 for app in ${applist[@]}
