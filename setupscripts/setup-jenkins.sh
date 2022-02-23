@@ -20,7 +20,7 @@ ps aux |grep jenkins
 
 #create ssh pvt key in master server
 runuser -l  jenkins  -c 'ssh-keygen -t rsa -N "" -f ~/.ssh/id_rsa <<< y'
-runuser -l  jenkins  -c 'cp ssh/id_rsa /var/lib/jenkins/.ssh/id_rsa'
+runuser -l  jenkins  -c 'cp /jenkins/setupscripts/ssh/id_rsa  /var/lib/jenkins/.ssh/id_rsa'
 chmod 600 /var/lib/jenkins/.ssh/id_rsa
  
 echo "INSTALLED  JENKINS................." 
