@@ -16,13 +16,15 @@ echo "Install jenkins"
 sudo apt install -y jenkins
 sleep 30
 ps aux |grep jenkins
-echo "INSTALLED  JENKINS................." 
 
+
+#create ssh pvt key in master server
+runuser -l  jenkins  -c 'ssh-keygen -t rsa -N "" -f ~/.ssh/id_rsa <<< y'
+runuser -l  jenkins  -c 'cp ssh/id_rsa /var/lib/jenkins/.ssh/id_rsa'
+chmod 600 /var/lib/jenkins/.ssh/id_rsa
+ 
+echo "INSTALLED  JENKINS................." 
 #sudo cp /var/lib/jenkins/secrets/initialAdminPassword /var/lib/jenkins/secrets/initialAdminPassword_bak
 #sudo cp initialAdminPassword /var/lib/jenkins/secrets/initialAdminPassword
-
 echo "USE PASS to SETUP: "`cat /var/lib/jenkins/secrets/initialAdminPassword`
- 
- 
- 
 
