@@ -6,7 +6,7 @@
 ####################################
 
 applist=(jenkins docker awscli)
-apt install net-tools
+apt install -y net-tools
 for app in ${applist[@]}
 do
     echo $app
